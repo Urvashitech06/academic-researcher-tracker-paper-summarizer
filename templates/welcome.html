@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Welcome to Scholar's Home — Secure Academic Research Workspace</title>
+
+  <!-- Google Fonts: Newsreader, Plus Jakarta Sans, JetBrains Mono, Material Symbols Outlined -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Tailwind CSS with Stitch Palette -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#362e2b",
+            "primary-container": "#52433d",
+            "secondary": "#43654d",
+            "secondary-container": "#e4ece5",
+            "secondary-fixed": "#d4ebd9",
+            "on-secondary-fixed": "#16341f",
+            "surface": "#faf7f2",
+            "surface-container-low": "#f6f2ec",
+            "surface-container": "#f3eee7",
+            "surface-container-high": "#ebe5dc",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#24201e",
+            "on-surface-variant": "#635d57",
+            "outline": "#8a817b",
+            "outline-variant": "#e6dfd5",
+            "error": "#b3261e",
+            "error-container": "#fceae8"
+          },
+          fontFamily: {
+            "headline": ["Newsreader", "serif"],
+            "body": ["Plus Jakarta Sans", "sans-serif"],
+            "mono": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col justify-between selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+  <!-- Top Navigation Header -->
+  <header class="h-16 px-6 md:px-12 flex items-center justify-between border-b border-outline-variant/60 bg-surface/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-headline text-lg font-bold shadow-sm">
+        ☵
+      </div>
+      <div class="flex flex-col">
+        <span class="font-headline text-lg tracking-tight text-on-surface leading-none font-semibold">Scholar's Home</span>
+        <span class="font-mono text-on-surface-variant uppercase tracking-wider text-[10px] mt-0.5">Research Lab OS</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-2 text-xs font-mono text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/50">
+      <span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+      <span>3NF PostgreSQL Vault &bull; Isolated Tenant</span>
+    </div>
+  </header>
+
+  <!-- Main Hero & Authentication Container -->
+  <main class="flex-1 max-w-6xl w-full mx-auto px-6 py-10 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    
+    <!-- Left Column (Hero & Research Pitch) -->
+    <div class="lg:col-span-7 flex flex-col gap-6">
+      <div class="inline-flex items-center gap-2 bg-secondary-container/70 border border-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-mono font-medium w-fit">
+        <span class="material-symbols-outlined text-sm text-secondary">verified_user</span>
+        <span>Secure & Private Multi-User Architecture</span>
+      </div>
+
+      <h1 class="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface leading-[1.15] font-semibold">
+        Your Private Archive for Scientific Literature & Synthesis.
+      </h1>
+
+      <p class="font-headline text-lg md:text-xl text-on-surface-variant leading-relaxed">
+        Ingest research manuscripts, extract structured executive insights via <strong class="text-on-surface font-semibold">Gemini 2.5 Flash</strong>, and track your personalized discovery pipeline in a normalized relational database.
+      </p>
+
+      <!-- Security & Privacy Guarantee Callouts -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/60 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col gap-1.5">
+          <div class="flex items-center gap-2 text-secondary font-mono text-xs font-semibold">
+            <span class="material-symbols-outlined text-base">lock</span>
+            <span>Per-User Data Isolation</span>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            All uploaded PDFs, AI summaries, and taxonomy tags are bound strictly to your user account via 3NF foreign key constraints.
+          </p>
+        </div>
+
+        <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/60 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col gap-1.5">
+          <div class="flex items-center gap-2 text-secondary font-mono text-xs font-semibold">
+            <span class="material-symbols-outlined text-base">key</span>
+            <span>Cryptographic Hashing</span>
+          </div>
+          <p class="text-xs text-on-surface-variant leading-relaxed">
+            Account passwords are salted and hashed using PBKDF2 with SHA-256 before storage in PostgreSQL.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column (Authentication Card) -->
+    <div class="lg:col-span-5">
+      <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/70 shadow-[0_4px_24px_rgba(50,40,35,0.06)] flex flex-col gap-6">
+        
+        <!-- Auth Tab Switcher -->
+        <div class="flex bg-surface-container-low p-1 rounded-xl border border-outline-variant/50">
+          <button id="tabLoginBtn" type="button" class="flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-surface-container-lowest text-on-surface shadow-sm cursor-pointer">
+            Sign In
+          </button>
+          <button id="tabSignupBtn" type="button" class="flex-1 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface transition-all cursor-pointer">
+            Create Account
+          </button>
+        </div>
+
+        <!-- Feedback Alert Banner -->
+        <div id="authAlert" class="hidden px-4 py-3 rounded-xl text-xs font-mono flex items-start gap-2">
+          <span class="material-symbols-outlined text-base shrink-0" id="authAlertIcon">info</span>
+          <span id="authAlertMsg" class="leading-snug"></span>
+        </div>
+
+        <!-- FORM 1: LOGIN -->
+        <form id="loginForm" class="flex flex-col gap-4">
+          <div class="flex flex-col gap-1.5">
+            <label for="loginEmail" class="text-xs font-semibold text-on-surface font-mono uppercase tracking-wider">
+              Academic Email Address
+            </label>
+            <input type="email" id="loginEmail" required class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low/60 border border-outline-variant text-sm text-on-surface focus:outline-none focus:border-secondary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="researcher@university.edu" autocomplete="email">
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <label for="loginPassword" class="text-xs font-semibold text-on-surface font-mono uppercase tracking-wider">
+                Password
+              </label>
+            </div>
+            <input type="password" id="loginPassword" required class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low/60 border border-outline-variant text-sm text-on-surface focus:outline-none focus:border-secondary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="••••••••••••" autocomplete="current-password">
+          </div>
+
+          <button type="submit" id="loginSubmitBtn" class="w-full py-3 bg-primary text-white rounded-xl font-semibold text-sm hover:bg-primary-container shadow-md transition-all active:scale-[0.99] flex items-center justify-center gap-2 mt-2 cursor-pointer">
+            <span>Sign In to Scholar's Home</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </button>
+        </form>
+
+        <!-- FORM 2: SIGNUP -->
+        <form id="signupForm" class="flex flex-col gap-4 hidden">
+          <div class="flex flex-col gap-1.5">
+            <label for="signupName" class="text-xs font-semibold text-on-surface font-mono uppercase tracking-wider">
+              Full Name / Academic Title
+            </label>
+            <input type="text" id="signupName" required class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low/60 border border-outline-variant text-sm text-on-surface focus:outline-none focus:border-secondary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="Dr. Elena Vance" autocomplete="name">
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="signupEmail" class="text-xs font-semibold text-on-surface font-mono uppercase tracking-wider">
+              Academic Email Address
+            </label>
+            <input type="email" id="signupEmail" required class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low/60 border border-outline-variant text-sm text-on-surface focus:outline-none focus:border-secondary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="researcher@university.edu" autocomplete="email">
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="signupPassword" class="text-xs font-semibold text-on-surface font-mono uppercase tracking-wider">
+              Set Account Password
+            </label>
+            <input type="password" id="signupPassword" required minlength="6" class="w-full px-3.5 py-2.5 rounded-xl bg-surface-container-low/60 border border-outline-variant text-sm text-on-surface focus:outline-none focus:border-secondary focus:bg-white transition-all placeholder:text-on-surface-variant/50" placeholder="At least 6 characters" autocomplete="new-password">
+          </div>
+
+          <button type="submit" id="signupSubmitBtn" class="w-full py-3 bg-secondary text-white rounded-xl font-semibold text-sm hover:bg-[#34513c] shadow-md transition-all active:scale-[0.99] flex items-center justify-center gap-2 mt-2 cursor-pointer">
+            <span>Set Up Scholar's Home Account</span>
+            <span class="material-symbols-outlined text-base">how_to_reg</span>
+          </button>
+        </form>
+
+        <!-- Quick Demo Credentials Hint -->
+        <div class="p-3 bg-surface-container-low/70 rounded-xl border border-outline-variant/50 flex flex-col gap-1 text-[11px] font-mono text-on-surface-variant">
+          <div class="flex items-center justify-between text-secondary font-semibold">
+            <span>Default Test Account</span>
+            <button type="button" id="fillDemoBtn" class="underline hover:text-on-surface cursor-pointer">Auto-Fill</button>
+          </div>
+          <div class="text-[10.5px]">Email: <span class="text-on-surface">researcher@scholarshome.edu</span></div>
+          <div class="text-[10.5px]">Password: <span class="text-on-surface">Password123!</span></div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-outline-variant/60 py-6 text-center text-xs font-mono text-on-surface-variant">
+    Scholar's Home &bull; 3NF PostgreSQL Relational Intelligence &bull; Google Gemini 2.5 Flash
+  </footer>
+
+  <!-- Auth Controller Script -->
+  <script>
+    const tabLoginBtn = document.getElementById('tabLoginBtn');
+    const tabSignupBtn = document.getElementById('tabSignupBtn');
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const authAlert = document.getElementById('authAlert');
+    const authAlertMsg = document.getElementById('authAlertMsg');
+    const authAlertIcon = document.getElementById('authAlertIcon');
+    const fillDemoBtn = document.getElementById('fillDemoBtn');
+
+    function showAlert(msg, isError = true) {
+      authAlertMsg.textContent = msg;
+      authAlert.classList.remove('hidden');
+      if (isError) {
+        authAlert.className = 'px-4 py-3 rounded-xl text-xs font-mono flex items-start gap-2 bg-error-container text-error border border-error/30';
+        authAlertIcon.textContent = 'error';
+      } else {
+        authAlert.className = 'px-4 py-3 rounded-xl text-xs font-mono flex items-start gap-2 bg-secondary-container text-on-secondary-fixed border border-secondary-fixed';
+        authAlertIcon.textContent = 'check_circle';
+      }
+    }
+
+    // Switch Tabs
+    tabLoginBtn.addEventListener('click', () => {
+      tabLoginBtn.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-surface-container-lowest text-on-surface shadow-sm cursor-pointer';
+      tabSignupBtn.className = 'flex-1 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface transition-all cursor-pointer';
+      loginForm.classList.remove('hidden');
+      signupForm.classList.add('hidden');
+      authAlert.classList.add('hidden');
+    });
+
+    tabSignupBtn.addEventListener('click', () => {
+      tabSignupBtn.className = 'flex-1 py-2 text-xs font-semibold rounded-lg transition-all bg-surface-container-lowest text-on-surface shadow-sm cursor-pointer';
+      tabLoginBtn.className = 'flex-1 py-2 text-xs font-semibold rounded-lg text-on-surface-variant hover:text-on-surface transition-all cursor-pointer';
+      signupForm.classList.remove('hidden');
+      loginForm.classList.add('hidden');
+      authAlert.classList.add('hidden');
+    });
+
+    // Auto fill demo account
+    fillDemoBtn.addEventListener('click', () => {
+      document.getElementById('loginEmail').value = 'researcher@scholarshome.edu';
+      document.getElementById('loginPassword').value = 'Password123!';
+      showAlert('Demo credentials filled. Click "Sign In" to proceed.', false);
+    });
+
+    // Handle Login
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      const submitBtn = document.getElementById('loginSubmitBtn');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Verifying...</span>';
+
+      try {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          showAlert('Login successful! Entering your research vault...', false);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 600);
+        } else {
+          showAlert(data.error || 'Authentication failed. Please check credentials.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Sign In to Scholar\'s Home</span><span class="material-symbols-outlined text-base">arrow_forward</span>';
+        }
+      } catch (err) {
+        showAlert('Network error: Could not reach authentication server.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Sign In to Scholar\'s Home</span><span class="material-symbols-outlined text-base">arrow_forward</span>';
+      }
+    });
+
+    // Handle Signup
+    signupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const full_name = document.getElementById('signupName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const password = document.getElementById('signupPassword').value;
+      const submitBtn = document.getElementById('signupSubmitBtn');
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Creating Vault...</span>';
+
+      try {
+        const res = await fetch('/api/auth/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ full_name, email, password })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          showAlert('Account created successfully! Loading your personal workspace...', false);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 600);
+        } else {
+          showAlert(data.error || 'Failed to create account.');
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<span>Set Up Scholar\'s Home Account</span><span class="material-symbols-outlined text-base">how_to_reg</span>';
+        }
+      } catch (err) {
+        showAlert('Network error: Could not reach authentication server.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<span>Set Up Scholar\'s Home Account</span><span class="material-symbols-outlined text-base">how_to_reg</span>';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+services:
+  # ---------------------------------------------------------------------------
+  # 1. PostgreSQL 15 Relational Database Service (3NF Architecture)
+  # ---------------------------------------------------------------------------
+  db:
+    image: postgres:15-alpine
+    container_name: scholarshome_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${DB_NAME:-scholarshome_db}
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./schema.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-scholarshome_db}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - scholarshome_net
+
+  # ---------------------------------------------------------------------------
+  # 2. Flask Application Backend (Python 3.11 + pypdf + Gemini 2.5 Flash)
+  # ---------------------------------------------------------------------------
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scholarshome_web
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:-scholarshome_db}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.5-flash}
+      - PORT=5000
+    volumes:
+      - ./uploads:/app/uploads
+      - ./app.py:/app/app.py
+      - ./schema.sql:/app/schema.sql
+      - ./test_db.py:/app/test_db.py
+      - ./templates:/app/templates
+      - ./static:/app/static
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - scholarshome_net
+
+# -----------------------------------------------------------------------------
+# Networks & Persistent Volumes
+# -----------------------------------------------------------------------------
+networks:
+  scholarshome_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local

@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;background-color:#faf7f2;color:#2c2724;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-container-highest": "#e8e1dc",
+          "on-surface-variant": "#635d57",
+          "error-container": "#fceae8",
+          "primary": "#362e2b",
+          "on-background": "#24201e",
+          "surface": "#faf7f2",
+          "primary-fixed-dim": "#e4beb1",
+          "on-secondary": "#ffffff",
+          "surface-container": "#f3eee7",
+          "secondary-fixed-dim": "#b5d4bc",
+          "secondary-fixed": "#d4ebd9",
+          "on-primary": "#ffffff",
+          "surface-container-high": "#ebe5dc",
+          "primary-fixed": "#ffdbce",
+          "on-secondary-fixed-variant": "#2d4e38",
+          "surface-tint": "#75584d",
+          "on-primary-container": "#ffdbcf",
+          "secondary-container": "#e4ece5",
+          "tertiary": "#465261",
+          "inverse-on-surface": "#faf6f0",
+          "on-surface": "#24201e",
+          "inverse-surface": "#322e2b",
+          "on-secondary-fixed": "#16341f",
+          "surface-dim": "#ded8cf",
+          "tertiary-container": "#e7edf6",
+          "on-error": "#ffffff",
+          "outline": "#8a817b",
+          "on-tertiary-fixed-variant": "#3b4859",
+          "secondary": "#43654d",
+          "surface-container-low": "#f6f2ec",
+          "on-error-container": "#8b1814",
+          "surface-container-lowest": "#ffffff",
+          "outline-variant": "#e6dfd5",
+          "error": "#b3261e",
+          "on-primary-fixed": "#2b160e",
+          "primary-container": "#52433d",
+          "on-tertiary-container": "#27394c",
+          "surface-bright": "#fdfbf7",
+          "inverse-primary": "#e4beb1",
+          "tertiary-fixed-dim": "#bac7dc",
+          "background": "#faf7f2",
+          "tertiary-fixed": "#d6e3f9",
+          "surface-variant": "#ebe4da",
+          "on-tertiary-fixed": "#0f1c2b",
+          "on-primary-fixed-variant": "#5b4137",
+          "on-secondary-container": "#284632",
+          "on-tertiary": "#ffffff"
+        },
+        borderRadius: {
+          "DEFAULT": "0.375rem",
+          "lg": "0.625rem",
+          "xl": "0.875rem",
+          "2xl": "1.25rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "space-sm": "0.5rem",
+          "margin-mobile": "1.25rem",
+          "gutter": "1.5rem",
+          "margin": "3rem",
+          "space-xs": "0.25rem",
+          "space-md": "1rem",
+          "gutter-mobile": "1rem",
+          "space-lg": "1.5rem",
+          "space-xl": "2.5rem",
+          "space-2xl": "3rem"
+        },
+        fontFamily: {
+          "display-lg-mobile": ["Newsreader", "serif"],
+          "body-md": ["Plus Jakarta Sans", "sans-serif"],
+          "title-md": ["Plus Jakarta Sans", "sans-serif"],
+          "headline-lg-mobile": ["Newsreader", "serif"],
+          "headline-md": ["Newsreader", "serif"],
+          "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+          "body-lg": ["Newsreader", "serif"],
+          "display-lg": ["Newsreader", "serif"],
+          "headline-lg": ["Newsreader", "serif"],
+          "headline-sm": ["Newsreader", "serif"],
+          "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+          "label-md": ["Plus Jakarta Sans", "sans-serif"],
+          "label-mono": ["JetBrains Mono", "monospace"],
+          "body-reading": ["Newsreader", "serif"],
+          "body-ui": ["Plus Jakarta Sans", "sans-serif"],
+          "body-ui-sm": ["Plus Jakarta Sans", "sans-serif"],
+          "caption": ["Plus Jakarta Sans", "sans-serif"],
+          "title-sm": ["Plus Jakarta Sans", "sans-serif"]
+        },
+        fontSize: {
+          "display-lg-mobile": ["2.25rem", { lineHeight: "2.85rem", letterSpacing: "-0.015em", fontWeight: "400" }],
+          "body-md": ["0.9375rem", { lineHeight: "1.6rem", fontWeight: "400" }],
+          "title-md": ["1.125rem", { lineHeight: "1.625rem", fontWeight: "600" }],
+          "headline-lg-mobile": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.01em", fontWeight: "500" }],
+          "headline-md": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.01em", fontWeight: "500" }],
+          "body-sm": ["0.8125rem", { lineHeight: "1.35rem", fontWeight: "400" }],
+          "body-lg": ["1.1875rem", { lineHeight: "1.95rem", fontWeight: "400" }],
+          "display-lg": ["3.5rem", { lineHeight: "4.25rem", letterSpacing: "-0.02em", fontWeight: "400" }],
+          "headline-lg": ["2.25rem", { lineHeight: "2.85rem", letterSpacing: "-0.015em", fontWeight: "500" }],
+          "headline-sm": ["1.375rem", { lineHeight: "1.875rem", fontWeight: "500" }],
+          "label-sm": ["0.6875rem", { lineHeight: "1rem", letterSpacing: "0.04em", fontWeight: "600" }],
+          "label-md": ["0.8125rem", { lineHeight: "1.2rem", letterSpacing: "0.02em", fontWeight: "500" }],
+          "caption": ["0.75rem", { lineHeight: "1.1rem", letterSpacing: "0.01em", fontWeight: "400" }],
+          "body-ui": ["0.9rem", { lineHeight: "1.45rem", fontWeight: "400" }],
+          "body-ui-sm": ["0.8125rem", { lineHeight: "1.3rem", fontWeight: "400" }],
+          "body-reading": ["1.0625rem", { lineHeight: "1.75rem", letterSpacing: "0.005em", fontWeight: "400" }],
+          "title-sm": ["0.875rem", { lineHeight: "1.35rem", letterSpacing: "-0.005em", fontWeight: "600" }],
+          "label-mono": ["0.72rem", { lineHeight: "1.1rem", letterSpacing: "0.04em", fontWeight: "500" }]
+        }
+      }
+    }
+  }
+</script></head><body class="bg-surface font-body-ui text-body-ui text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low border-r border-outline-variant/70 shadow-[2px_0_16px_rgba(70,55,40,0.03)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/60"><div class="flex items-center gap-space-sm"><img alt="Scholar's Home Logo" class="h-8 w-auto object-contain drop-shadow-sm" src="https://lh3.googleusercontent.com/aida/AEtjO1VHfUx0uOpNWmJJik6eQSptB1vlPyeVXpMtCF23s1wVNzy6Pwj0Bx7gvrD5oY8kgjknVXa2ej8yG98Z6gsp9HGCTjpGx70_PFpv-QVzIwm9offapRXmf4QycbxMIX_hGgMSM4MGlXS7tl62LBmnyO7eiMYswTIFhuD_oJK7RUyGY_zGOMKuFzUY136090xgzi9IhScNqTgIEAareHPCtWtmirQ9Hx_d2U_pgssZ7_s"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-none font-medium">Scholar's Home</span><span class="font-label-mono text-label-mono text-on-surface-variant uppercase tracking-wider text-[10px] mt-0.5">Research Lab OS</span></div></div></div><div class="p-space-md"><div class="bg-surface-container-lowest/90 border border-outline-variant/70 rounded-xl p-space-sm shadow-[0_2px_8px_rgba(75,55,40,0.03)] flex items-center justify-between cursor-pointer hover:bg-surface-container hover:border-outline/40 transition-all"><div class="flex flex-col overflow-hidden"><span class="font-caption text-[10.5px] uppercase tracking-wider text-on-surface-variant font-medium">Active Workspace</span><span class="font-title-sm text-title-sm text-on-surface truncate font-semibold">Project: Efficient Reasoning &amp; Pruning</span></div><span class="material-symbols-outlined text-on-surface-variant text-base">unfold_more</span></div></div><div class="px-space-md py-space-xs"><button class="w-full flex items-center justify-center gap-space-sm py-2.5 bg-primary text-on-primary rounded-xl font-title-sm text-title-sm hover:bg-primary-container shadow-[0_2px_6px_rgba(50,40,35,0.15)] transition-all active:scale-[0.99]" type="button"><span class="material-symbols-outlined text-base">add</span><span class="">Import PDF / ArXiv URL</span></button></div><div class="px-space-md mt- space-md pt-2"><span class="font-label-mono text-[10px] uppercase tracking-widest text-on-surface-variant/80 px-space-sm">Core Intelligence</span></div><nav class="flex flex-col gap-1.5 px-space-md mt-space-xs" data-active-classes="bg-secondary-container/80 text-on-secondary-container font-title-sm font-semibold rounded-xl border border-secondary-fixed"><a aria-current="page" class="flex items-center justify-between px-space-md py-2 transition-all bg-secondary-container/80 text-on-secondary-container font-title-sm font-semibold rounded-xl border border-secondary-fixed shadow-[0_1px_4px_rgba(68,102,78,0.06)]" data-path="research-feed" href="/"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg text-secondary">newspaper</span><span class="font-body-ui text-body-ui">Research Feed</span></div><span class="font-label-mono text-[10.5px] bg-surface-container-lowest/90 border border-secondary-fixed px-2 py-0.5 rounded-full text-secondary font-medium">12 new</span></a><a class="flex items-center justify-between px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all" data-path="paper-analyzer" href="/analyzer"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">article</span><span class="font-body-ui text-body-ui">Paper Analyzer</span></div><span class="font-label-mono text-[10px] bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-medium">AI Sync</span></a><a class="flex items-center justify-between px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all" data-path="synthesis-matrix" href="/matrix"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">table_chart</span><span class="font-body-ui text-body-ui">Synthesis Matrix</span></div><span class="font-label-mono text-[10.5px] text-on-surface-variant">4 tables</span></a><a class="flex items-center justify-between px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high/60 hover:text-on-surface transition-all" data-path="citation-graph" href="/graph"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-lg">hub</span><span class="font-body-ui text-body-ui">Citation Graph</span></div><span class="font-label-mono text-[10.5px] text-on-surface-variant">2.4k nodes</span></a></nav></div><div class="flex flex-col border-t border-outline-variant/60 p-space-md gap-2"><div class="flex items-center justify-between bg-surface-container-lowest/80 border border-outline-variant/60 px-space-sm py-1.5 rounded-lg shadow-sm"><div class="flex items-center gap-space-xs"><span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span><span class="font-caption text-caption text-on-surface font-medium">Zotero Sync Active</span></div><span class="material-symbols-outlined text-on-surface-variant text-sm">sync</span></div><div class="flex items-center justify-between px-space-sm py-1.5 rounded-lg hover:bg-surface-container-high/60 transition-colors cursor-pointer"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-on-surface-variant text-base">file_download</span><span class="font-body-ui-sm text-body-ui-sm text-on-surface">BibTeX Export Tray</span></div><span class="font-label-mono text-label-mono bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-medium">28</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/92 backdrop-blur-md border-b border-outline-variant/60 shadow-[0_1px_6px_rgba(60,45,35,0.02)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant/70 text-lg">search</span><input class="w-full pl-10 pr-16 py-2 rounded-xl bg-surface-container-low/70 border border-outline-variant/40 font-body-ui-sm text-body-ui-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:border-secondary transition-all placeholder:text-on-surface-variant/60" placeholder="Search papers by title, author, or arXiv ID..." type="text"><div class="absolute right-space-sm flex items-center"><kbd class="font-label-mono text-[10px] text-on-surface-variant/70 bg-surface-container-high/60 px-2 py-0.5 rounded">⌘K</kbd></div></div></div><div class="flex items-center gap-space-lg"><div class="flex items-center gap-2 text-on-surface-variant hover:text-on-surface cursor-pointer transition-colors"><span class="material-symbols-outlined text-secondary text-base">bookmark</span><span class="font-body-ui-sm text-body-ui-sm font-medium">Queue</span><span class="font-label-mono text-[11px] bg-secondary-fixed/50 text-on-secondary-fixed px-2 py-0.5 rounded-full font-semibold">4</span></div><div class="h-4 w-px bg-outline-variant/60"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-title-sm text-title-sm text-on-surface leading-tight font-medium">Dr. Elena Vance</span><span class="font-caption text-caption text-on-surface-variant leading-tight">Stanford NLP</span></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant/60 shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCskuKuqPqtF3yyUOz6jAD1sJCW90qAZt_TfIKt3sB5B2j_1GCe7wdoMm9_G_Jl1Ou1OUqcfbhmrQ09Nvr2oIXc3ad_1emC7JE54J43nVHQ9JRyiTA9VgZIyKpb_gmuu6u9W7mFDkXPeNv2zC7YzDUHjnBg0WlfqjloKtNkCWPOxqBCEPE9rk0f1xuPkqc3XbIExykcXgesqdH-YsKX89MN0pwoXrPKCSUTFHeiLg"></div></div></header><main class="relative w-full pt-16 bg-surface min-h-screen px-space-lg py-space-lg"><div class="flex flex-col w-full pb-space-2xl gap-space-lg">
+<!-- TOP METRIC OVERVIEW STRIP (Bento Grid Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-space-md w-full"><div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col justify-between"><span class="font-label-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Intake Pipeline</span><div class="mt-3 flex items-baseline gap-2"><span class="font-headline-lg text-headline-lg text-on-surface font-serif">18</span><span class="font-body-ui-sm text-on-surface-variant">unread preprints today</span></div><span class="font-caption text-caption text-secondary mt-1 font-medium">+6 new since morning sync</span></div><div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col justify-between"><span class="font-label-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">High Novelty Preprints</span><div class="mt-3 flex items-baseline gap-2"><span class="font-headline-lg text-headline-lg text-secondary font-serif">4</span><span class="font-body-ui-sm text-on-surface-variant">exceeding score 8.5</span></div><span class="font-caption text-caption text-on-surface-variant mt-1">Algorithmic divergence alert</span></div><div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/40 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col justify-between"><span class="font-label-mono text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Active Focus</span><div class="mt-3 flex items-baseline gap-2"><span class="font-headline-sm text-headline-sm text-on-surface font-serif font-medium truncate">Efficient Reasoning</span></div><span class="font-caption text-caption text-on-surface-variant mt-1">142 papers organized in workspace</span></div></section>
+<!-- FILTER & REFINEMENT STRIP -->
+<section class="bg-surface-container-lowest p-space-md rounded-2xl border border-outline-variant/60 shadow-[0_2px_12px_rgba(75,55,40,0.03)] flex flex-col gap-space-md"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto"><button class="bg-primary text-on-primary font-body-ui-sm text-body-ui-sm px-4 py-1.5 rounded-full transition-opacity shadow-sm" type="button">All Categories</button><button class="bg-surface-container-low text-on-surface-variant hover:text-on-surface font-body-ui-sm text-body-ui-sm px-4 py-1.5 rounded-full border border-outline-variant/40 transition-colors" type="button">cs.CL · Computation</button><button class="bg-surface-container-low text-on-surface-variant hover:text-on-surface font-body-ui-sm text-body-ui-sm px-4 py-1.5 rounded-full border border-outline-variant/40 transition-colors" type="button">cs.AI · Artificial Intelligence</button><button class="bg-surface-container-low text-on-surface-variant hover:text-on-surface font-body-ui-sm text-body-ui-sm px-4 py-1.5 rounded-full border border-outline-variant/40 transition-colors" type="button">cs.LG · Learning</button></div><div class="flex items-center gap-space-md shrink-0"><span class="font-caption text-caption text-on-surface-variant">Showing 28 discoveries</span><select class="bg-surface-container-low border border-outline-variant/50 font-body-ui-sm text-body-ui-sm text-on-surface px-3 py-1.5 rounded-xl focus:outline-none cursor-pointer"><option selected="">Novelty Score</option><option>Recent First</option><option>Citations</option></select></div></div></section>
+<!-- MAIN TWO-COLUMN CONTENT GRID -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full items-start">
+<!-- LEFT MAIN STREAM: RESEARCH FEED (65% width => 8 cols on 12-col grid) -->
+<section class="lg:col-span-8 flex flex-col gap-space-md w-full"><article class="bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/50 shadow-[0_1px_6px_rgba(75,55,40,0.02)] hover:shadow-[0_4px_18px_rgba(75,55,40,0.05)] transition-all flex flex-col gap-space-md"><div class="flex items-center justify-between text-caption text-on-surface-variant"><div class="flex items-center gap-2"><span class="font-label-mono text-[11px] bg-secondary-fixed/50 text-on-secondary-fixed px-2.5 py-0.5 rounded-full font-medium">arXiv:2405.10928</span><span class="">·</span><span class="">May 16, 2024</span><span class="">·</span><span class="">Stanford &amp; Google DeepMind</span></div><span class="font-label-mono text-[11px] text-secondary font-semibold bg-secondary-container/50 px-2.5 py-0.5 rounded-full border border-secondary-fixed/70">Novelty 9.4</span></div><div class="flex flex-col gap-1"><h2 class="font-headline-md text-headline-md text-on-surface hover:text-secondary transition-colors cursor-pointer font-serif leading-snug">Speculative Speculations: Adaptive Token Verification for 10x Latency Reduction</h2><p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Zhang, Vance, Al-Mansoor, Chen, Hassabis</p></div><div class="bg-surface-container-low/70 border border-outline-variant/40 p-4 rounded-xl"><p class="font-body-reading text-body-reading text-on-surface leading-relaxed italic">“We introduce an adaptive early-exit heuristic for draft tokens that entirely bypasses subsequent verification phases when epistemic uncertainty is beneath $\tau = 0.042$. Validated across LLaMA-3-70B and Gemma-2.”</p></div><div class="flex items-center justify-between pt-2 border-t border-outline-variant/40"><div class="flex items-center gap-2"><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">Speculative Decoding</span><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">Inference Optimization</span></div><div class="flex items-center gap-space-sm"><button class="bg-surface-container text-on-surface font-title-sm text-title-sm px-4 py-2 rounded-xl hover:bg-surface-container-high transition-colors" type="button">Add to Matrix</button><button class="bg-primary text-on-primary font-title-sm text-title-sm px-5 py-2 rounded-xl hover:bg-primary-container transition-all shadow-sm" type="button">Read &amp; Analyze</button></div></div></article><article class="bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/50 shadow-[0_1px_6px_rgba(75,55,40,0.02)] hover:shadow-[0_4px_18px_rgba(75,55,40,0.05)] transition-all flex flex-col gap-space-md"><div class="flex items-center justify-between text-caption text-on-surface-variant"><div class="flex items-center gap-2"><span class="font-label-mono text-[11px] bg-surface-container px-2.5 py-0.5 rounded-full font-medium">arXiv:2405.08311</span><span class="">·</span><span class="">May 14, 2024</span><span class="">·</span><span class="">DeepSeek AI &amp; Peking University</span></div><span class="font-label-mono text-[11px] text-secondary font-semibold bg-secondary-container/50 px-2.5 py-0.5 rounded-full border border-secondary-fixed/70">Novelty 8.9</span></div><div class="flex flex-col gap-1"><h2 class="font-headline-md text-headline-md text-on-surface hover:text-secondary transition-colors cursor-pointer font-serif leading-snug">DeepSeek-Prover-V2: Harnessing Tree-Search Reinforcement Learning for Formal Proofs</h2><p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">Shao, Hu, Wang, Song, Gao et al.</p></div><p class="font-body-reading text-body-reading text-on-surface leading-relaxed">Presents a recurrent Monte Carlo Tree Search framework coupled with automated feedback loops in the Lean 4 theorem prover. Demonstrates formal lemma generation without human curriculum guidance, achieving +14.2% on miniF2F.</p><div class="flex items-center justify-between pt-2 border-t border-outline-variant/40"><div class="flex items-center gap-2"><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">Formal Verification</span><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">RLVR</span></div><div class="flex items-center gap-space-sm"><button class="bg-surface-container text-on-surface font-title-sm text-title-sm px-4 py-2 rounded-xl hover:bg-surface-container-high transition-colors" type="button">Add to Matrix</button><button class="bg-primary text-on-primary font-title-sm text-title-sm px-5 py-2 rounded-xl hover:bg-primary-container transition-all shadow-sm" type="button">Read &amp; Analyze</button></div></div></article><article class="bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/50 shadow-[0_1px_6px_rgba(75,55,40,0.02)] hover:shadow-[0_4px_18px_rgba(75,55,40,0.05)] transition-all flex flex-col gap-space-md"><div class="flex items-center justify-between text-caption text-on-surface-variant"><div class="flex items-center gap-2"><span class="font-label-mono text-[11px] bg-surface-container px-2.5 py-0.5 rounded-full font-medium">arXiv:2405.04102</span><span class="">·</span><span class="">May 11, 2024</span><span class="">·</span><span class="">MIT CSAIL &amp; Harvard NLP</span></div><span class="font-label-mono text-[11px] text-on-surface-variant font-medium bg-surface-container px-2.5 py-0.5 rounded-full">Novelty 8.2</span></div><div class="flex flex-col gap-1"><h2 class="font-headline-md text-headline-md text-on-surface hover:text-secondary transition-colors cursor-pointer font-serif leading-snug">KV Cache Compression via Sparse Saliency Projection</h2><p class="font-body-ui-sm text-body-ui-sm text-on-surface-variant">T. K. Morrison, L. Sterling, J. D. Glass</p></div><p class="font-body-reading text-body-reading text-on-surface leading-relaxed">Proposes dynamic subspace eviction for transformers operating with context windows exceeding 64k tokens. Achieves a 4.1x reduction in VRAM footprint with minimal degradation across benchmarks.</p><div class="flex items-center justify-between pt-2 border-t border-outline-variant/40"><div class="flex items-center gap-2"><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">Memory Bounds</span><span class="text-caption bg-surface-container-low px-2.5 py-1 rounded-lg text-on-surface-variant">Long Context</span></div><div class="flex items-center gap-space-sm"><button class="bg-surface-container text-on-surface font-title-sm text-title-sm px-4 py-2 rounded-xl hover:bg-surface-container-high transition-colors" type="button">Add to Matrix</button><button class="bg-primary text-on-primary font-title-sm text-title-sm px-5 py-2 rounded-xl hover:bg-primary-container transition-all shadow-sm" type="button">Read &amp; Analyze</button></div></div></article><div class="flex items-center justify-center py-4"><button class="bg-surface-container-lowest border border-outline-variant/60 text-on-surface font-title-sm text-title-sm px-8 py-3 rounded-full hover:bg-surface-container-low transition-colors shadow-sm flex items-center gap-2" type="button"><span class="material-symbols-outlined text-base">expand_more</span>Load More Discoveries</button></div></section>
+<!-- RIGHT RAIL: AI BRIEFING, QUEUE, TRENDS & INTEGRATIONS (35% width => 4 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-space-lg w-full"><div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/50 shadow-[0_1px_6px_rgba(75,55,40,0.02)] flex flex-col gap-space-md"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-lg">psychology</span><span class="font-title-sm text-title-sm text-on-surface font-serif">Daily Briefing</span></div><span class="font-label-mono text-[10px] text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full">24h Digest</span></div><div class="bg-secondary-container/30 border border-secondary-fixed/50 p-4 rounded-xl flex flex-col gap-1"><span class="font-label-mono text-[10px] text-secondary font-semibold uppercase tracking-wider">Key Pattern</span><p class="font-body-ui-sm text-body-ui-sm text-on-surface leading-snug font-medium">Surge in speculative verification methods operating without auxiliary draft models.</p></div><ul class="flex flex-col gap-3"><li class="flex items-start gap-2 text-caption text-on-surface-variant leading-relaxed"><span class="text-secondary mt-0.5">•</span><span class=""><strong class="text-on-surface font-medium">3 papers</strong> demonstrate skipping token checks via variance thresholding on logits.</span></li><li class="flex items-start gap-2 text-caption text-on-surface-variant leading-relaxed"><span class="text-secondary mt-0.5">•</span><span class=""><strong class="text-on-surface font-medium">Peking University release</strong> adopts reward-guided recurrent MCTS over brute search.</span></li><li class="flex items-start gap-2 text-caption text-on-surface-variant leading-relaxed"><span class="text-secondary mt-0.5">•</span><span class=""><strong class="text-on-surface font-medium">Emerging consensus:</strong> Token-level saliency projection improves KV cache utility.</span></li></ul><button class="w-full py-2 bg-surface-container-low border border-outline-variant/40 text-on-surface rounded-xl font-body-ui-sm text-body-ui-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-1.5 mt-1" type="button"><span class="">Export to Notes</span><span class="material-symbols-outlined text-xs">download</span></button></div><div class="bg-surface-container-lowest p-6 rounded-2xl border border-outline-variant/50 shadow-[0_1px_6px_rgba(75,55,40,0.02)] flex flex-col gap-space-md"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-on-surface-variant text-base">bookmark_outline</span><span class="font-title-sm text-title-sm text-on-surface font-serif">Reading Queue</span></div><span class="font-label-mono text-[10px] bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant font-medium">4 items</span></div><div class="flex flex-col gap-2"><div class="p-3 bg-surface-container-low/60 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors"><div class="flex flex-col min-w-0 pr-2"><span class="font-body-ui-sm text-body-ui-sm text-on-surface font-medium truncate">Speculative Speculations</span><span class="font-caption text-on-surface-variant text-[11px]">12 min AI summary</span></div><span class="material-symbols-outlined text-secondary text-lg cursor-pointer">play_circle</span></div><div class="p-3 bg-surface-container-low/60 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors"><div class="flex flex-col min-w-0 pr-2"><span class="font-body-ui-sm text-body-ui-sm text-on-surface font-medium truncate">DeepSeek-Prover-V2</span><span class="font-caption text-on-surface-variant text-[11px]">40 min full text</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg cursor-pointer">play_circle</span></div><div class="p-3 bg-surface-container-low/60 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors"><div class="flex flex-col min-w-0 pr-2"><span class="font-body-ui-sm text-body-ui-sm text-on-surface font-medium truncate">KV Cache Compression</span><span class="font-caption text-on-surface-variant text-[11px]">25 min preprint</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg cursor-pointer">play_circle</span></div><div class="p-3 bg-surface-container-low/60 rounded-xl flex items-center justify-between hover:bg-surface-container-low transition-colors"><div class="flex flex-col min-w-0 pr-2"><span class="font-body-ui-sm text-body-ui-sm text-on-surface font-medium truncate">Constitutional Direct Preference</span><span class="font-caption text-on-surface-variant text-[11px]">18 min digest</span></div><span class="material-symbols-outlined text-on-surface-variant text-lg cursor-pointer">play_circle</span></div></div><div class="flex items-center justify-between text-caption font-caption text-on-surface-variant pt-2 border-t border-outline-variant/40"><span class="">Est. time: 1h 35m</span><a class="text-secondary font-medium hover:underline" href="#">Download All</a></div></div></aside>
+</div>
+</div>
+<!-- Client-side Interactive Behaviors -->
+<script>
+  // Simple interactive filter selection feedback
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const parent = e.target.closest('label');
+      if (e.target.checked) {
+        parent.classList.add('bg-secondary-container/40', 'border-secondary-fixed');
+      } else {
+        parent.classList.remove('bg-secondary-container/40', 'border-secondary-fixed');
+      }
+    });
+  });
+</script></main></div>
+
+
+<!-- Live Backend Integration for Stitch Screens -->
+<input type="file" id="globalPdfUploader" accept="application/pdf" style="display:none;">
+<script>
+document.querySelectorAll('button').forEach(btn => {
+  if (btn.textContent.includes('Import PDF')) {
+    btn.onclick = () => document.getElementById('globalPdfUploader').click();
+  }
+});
+document.getElementById('globalPdfUploader').onchange = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const btns = Array.from(document.querySelectorAll('button')).filter(b => b.textContent.includes('Import PDF'));
+  btns.forEach(b => b.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Synthesizing...</span>');
+  const fd = new FormData();
+  fd.append('file', file);
+  try {
+    const res = await fetch('/api/upload-pdf', { method: 'POST', body: fd });
+    const data = await res.json();
+    if (res.ok) {
+      alert('"' + data.title + '" successfully synthesized by Gemini and saved to 3NF PostgreSQL!');
+      window.location.href = '/';
+    } else {
+      alert('Error: ' + (data.error || 'Upload failed'));
+    }
+  } catch (err) {
+    alert('Failed to connect to backend: ' + err.message);
+  } finally {
+    btns.forEach(b => b.innerHTML = '<span class="material-symbols-outlined text-base">add</span><span>Import PDF / ArXiv URL</span>');
+  }
+};
+</script>
+<script src="/static/js/scholar_auth.js"></script>
+</body></html>
