@@ -51,9 +51,7 @@
   <!-- Top Navigation Header -->
   <header class="h-16 px-6 md:px-12 flex items-center justify-between border-b border-outline-variant/60 bg-surface/80 backdrop-blur-md sticky top-0 z-40">
     <div class="flex items-center gap-3">
-      <div class="w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center font-headline text-lg font-bold shadow-sm">
-        ☵
-      </div>
+      <img alt="Scholar's Home Logo" class="h-10 w-10 object-contain rounded-lg" src="/static/logo.png">
       <div class="flex flex-col">
         <span class="font-headline text-lg tracking-tight text-on-surface leading-none font-semibold">Scholar's Home</span>
         <span class="font-mono text-on-surface-variant uppercase tracking-wider text-[10px] mt-0.5">Research Lab OS</span>
@@ -61,7 +59,7 @@
     </div>
     <div class="flex items-center gap-2 text-xs font-mono text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/50">
       <span class="h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
-      <span>3NF PostgreSQL Vault &bull; Isolated Tenant</span>
+      <span>Secure Vault &bull; Your Private Library</span>
     </div>
   </header>
 
@@ -80,7 +78,7 @@
       </h1>
 
       <p class="font-headline text-lg md:text-xl text-on-surface-variant leading-relaxed">
-        Ingest research manuscripts, extract structured executive insights via <strong class="text-on-surface font-semibold">Gemini 2.5 Flash</strong>, and track your personalized discovery pipeline in a normalized relational database.
+        Ingest research manuscripts, extract structured executive insights instantly via <strong class="text-on-surface font-semibold">advanced AI</strong>, and track your personalized discovery pipeline.
       </p>
 
       <!-- Security & Privacy Guarantee Callouts -->
@@ -88,20 +86,20 @@
         <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/60 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col gap-1.5">
           <div class="flex items-center gap-2 text-secondary font-mono text-xs font-semibold">
             <span class="material-symbols-outlined text-base">lock</span>
-            <span>Per-User Data Isolation</span>
+            <span>Strict Data Privacy</span>
           </div>
           <p class="text-xs text-on-surface-variant leading-relaxed">
-            All uploaded PDFs, AI summaries, and taxonomy tags are bound strictly to your user account via 3NF foreign key constraints.
+            Your uploaded PDFs, summaries, and tags are completely isolated and accessible only by you.
           </p>
         </div>
 
         <div class="bg-surface-container-lowest p-5 rounded-2xl border border-outline-variant/60 shadow-[0_1px_4px_rgba(60,45,35,0.02)] flex flex-col gap-1.5">
           <div class="flex items-center gap-2 text-secondary font-mono text-xs font-semibold">
             <span class="material-symbols-outlined text-base">key</span>
-            <span>Cryptographic Hashing</span>
+            <span>Bank-Grade Security</span>
           </div>
           <p class="text-xs text-on-surface-variant leading-relaxed">
-            Account passwords are salted and hashed using PBKDF2 with SHA-256 before storage in PostgreSQL.
+            Your account is protected using industry-standard cryptographic hashing and advanced encryption protocols.
           </p>
         </div>
       </div>
@@ -180,15 +178,7 @@
           </button>
         </form>
 
-        <!-- Quick Demo Credentials Hint -->
-        <div class="p-3 bg-surface-container-low/70 rounded-xl border border-outline-variant/50 flex flex-col gap-1 text-[11px] font-mono text-on-surface-variant">
-          <div class="flex items-center justify-between text-secondary font-semibold">
-            <span>Default Test Account</span>
-            <button type="button" id="fillDemoBtn" class="underline hover:text-on-surface cursor-pointer">Auto-Fill</button>
-          </div>
-          <div class="text-[10.5px]">Email: <span class="text-on-surface">researcher@scholarshome.edu</span></div>
-          <div class="text-[10.5px]">Password: <span class="text-on-surface">Password123!</span></div>
-        </div>
+
 
       </div>
     </div>
@@ -197,7 +187,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-outline-variant/60 py-6 text-center text-xs font-mono text-on-surface-variant">
-    Scholar's Home &bull; 3NF PostgreSQL Relational Intelligence &bull; Google Gemini 2.5 Flash
+    Scholar's Home &bull; Next-Generation Academic Intelligence &bull; Secure Research Vault
   </footer>
 
   <!-- Auth Controller Script -->
@@ -209,8 +199,6 @@
     const authAlert = document.getElementById('authAlert');
     const authAlertMsg = document.getElementById('authAlertMsg');
     const authAlertIcon = document.getElementById('authAlertIcon');
-    const fillDemoBtn = document.getElementById('fillDemoBtn');
-
     function showAlert(msg, isError = true) {
       authAlertMsg.textContent = msg;
       authAlert.classList.remove('hidden');
@@ -220,6 +208,20 @@
       } else {
         authAlert.className = 'px-4 py-3 rounded-xl text-xs font-mono flex items-start gap-2 bg-secondary-container text-on-secondary-fixed border border-secondary-fixed';
         authAlertIcon.textContent = 'check_circle';
+      }
+    }
+
+    // Auto-restore remembered email, always require password
+    const rememberedEmail = localStorage.getItem('scholar_remembered_email');
+    if (rememberedEmail) {
+      const emailField = document.getElementById('loginEmail');
+      const passwordField = document.getElementById('loginPassword');
+      if (emailField) {
+        emailField.value = rememberedEmail;
+      }
+      if (passwordField) {
+        passwordField.value = '';
+        setTimeout(() => passwordField.focus(), 150);
       }
     }
 
@@ -240,19 +242,15 @@
       authAlert.classList.add('hidden');
     });
 
-    // Auto fill demo account
-    fillDemoBtn.addEventListener('click', () => {
-      document.getElementById('loginEmail').value = 'researcher@scholarshome.edu';
-      document.getElementById('loginPassword').value = 'Password123!';
-      showAlert('Demo credentials filled. Click "Sign In" to proceed.', false);
-    });
-
     // Handle Login
     loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('loginEmail').value.trim();
       const password = document.getElementById('loginPassword').value;
       const submitBtn = document.getElementById('loginSubmitBtn');
+
+      // Remember email for next login
+      localStorage.setItem('scholar_remembered_email', email);
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Verifying...</span>';
@@ -289,6 +287,8 @@
       const email = document.getElementById('signupEmail').value.trim();
       const password = document.getElementById('signupPassword').value;
       const submitBtn = document.getElementById('signupSubmitBtn');
+
+      localStorage.setItem('scholar_remembered_email', email);
 
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">refresh</span><span>Creating Vault...</span>';

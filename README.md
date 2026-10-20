@@ -197,7 +197,7 @@ The database design strictly enforces **3rd Normal Form (3NF)** to eliminate dat
    DB_USER=postgres
    DB_PASSWORD=postgres
    GEMINI_API_KEY=your_gemini_api_key_here
-   GEMINI_MODEL=gemini-2.5-flash
+   GEMINI_MODEL=gemini-3.8-flash
    PORT=5000
    ```
 

@@ -43,7 +43,16 @@
     // 2. Update User Profile in Navigation Header & Sidebar
     updateUserProfileUI(currentUser);
 
-    // 3. Inject Sign Out Buttons in Header & Sidebar
+    // If SPA is active, app.js handles upload modal, paper loading, and navigation
+    if (document.getElementById('papersFeedStream')) {
+      const emailEl = document.getElementById('headerUserEmail');
+      if (emailEl && currentUser.email) emailEl.textContent = currentUser.email;
+      const nameEl = document.getElementById('headerUserName');
+      if (nameEl && currentUser.full_name) nameEl.textContent = currentUser.full_name;
+      return;
+    }
+
+    // 3. Inject Sign Out Buttons in Header & Sidebar (legacy screens only)
     injectSignOutButtons(currentUser);
 
     // 4. Setup Upload Handlers
@@ -95,27 +104,17 @@
   }
 
   /**
-   * Inject Sign Out buttons cleanly into the Header and Sidebar
+   * Ensure clean Sign Out in Sidebar only (never duplicate in Header)
    */
   function injectSignOutButtons(user) {
-    // Inject into Header profile area
-    const headerProfileContainer = document.querySelector('header .flex.items-center.gap-space-sm, header .flex.items-center.gap-2.bg-surface-container-lowest\\/90');
-    if (headerProfileContainer && !document.getElementById('header-logout-btn')) {
-      const logoutBtn = document.createElement('button');
-      logoutBtn.id = 'header-logout-btn';
-      logoutBtn.type = 'button';
-      logoutBtn.title = 'Sign Out of Scholar\'s Home';
-      logoutBtn.className =
-        'flex items-center gap-1.5 px-3 py-1.5 ml-2 rounded-xl border border-outline-variant/60 hover:bg-error-container/20 text-on-surface-variant hover:text-error hover:border-error/30 transition-all text-xs font-medium cursor-pointer shadow-xs';
-      logoutBtn.innerHTML = `
-        <span class="material-symbols-outlined text-sm">logout</span>
-        <span>Sign Out</span>
-      `;
-      logoutBtn.onclick = window.handleLogout;
-      headerProfileContainer.parentElement.appendChild(logoutBtn);
-    }
+    // Ensure no duplicate logout buttons exist in the header
+    const existingHeaderBtn = document.getElementById('header-logout-btn');
+    if (existingHeaderBtn) existingHeaderBtn.remove();
 
-    // Inject into Sidebar bottom panel
+    // Only inject sidebar logout if no logout link already exists
+    const hasSidebarLogout = document.querySelector('aside a[href*="logout"], aside #sidebar-logout-btn');
+    if (hasSidebarLogout) return;
+
     const sidebarBottom = document.querySelector('aside .flex.flex-col.border-t');
     if (sidebarBottom && !document.getElementById('sidebar-logout-btn')) {
       const sidebarLogout = document.createElement('button');
